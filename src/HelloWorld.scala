@@ -6,6 +6,20 @@ object HelloWorld {
 
 
     println(code)
+    //option types, some and none
+    def colorCode(color1: String): Option[Int] = {
+      color1 match {
+        case "red" => Some(1)
+        case "blue" => Some(2)
+        case "green" => Some(3)
+        case _ => None
+      }
+    }
+    val code1 = colorCode("orange")
+    code1 match {
+      case Some(c) => println("code for orange is: " + c)
+      case None => println("code not defined for orange")
+    }
   }
   //Higher-Order Methods
   def encode(n: Int, f: (Int) => Long): Long = {
